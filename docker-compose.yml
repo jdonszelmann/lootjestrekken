@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  lootjestrekken:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+    - 8080:8080
+    image: lootjestrekken
+    command: ["-port=8080", "-store=db", "-location=/data"]
+    volumes:
+      - ./data:/data
+
